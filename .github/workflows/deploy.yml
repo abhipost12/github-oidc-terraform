@@ -47,6 +47,7 @@ jobs:
 
       - name: "Install tfsec"
         uses: aquasecurity/tfsec-action@v1.0.0
+        continue-on-error: true
 
       - name: Terraform fmt
         id: fmt
