@@ -1,9 +1,16 @@
 name: "Terraform action"
 on:
   workflow_dispatch:
+    inputs:
+      terraform_action:
+        type: choice
+        description: select terraform action
+        options:
+        - apply
+        - destroy
+        required: true
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
 permissions:
       id-token: write # This is required for aws oidc connection
